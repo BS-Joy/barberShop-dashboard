@@ -107,6 +107,21 @@
   box-shadow: none;
 }
 
+.ant-select-dropdown {
+  border-radius: 5px !important;
+  padding: 0;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #3D1027;
+  color: white;
+}
+
+/* .ant-select-dropdown .ant-select-item-option-active:not(.ant-select-item-option-disabled):hover {
+  background-color: #cf9eb8;
+  color: #3D1027;
+} */
+
 .header-searchbar {
   /* background-color: red; */
   border-bottom: none;
