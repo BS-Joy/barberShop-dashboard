@@ -1,9 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import { DatePicker } from "antd";
 
 export const mainTheme = {
   token: {
-    colorPrimary: "#00C38A",
-    colorInfo: "#61D0FF",
+    colorPrimary: "#3D1027",
+    colorInfo: "#591839",
   },
   components: {
     //   Table: {
@@ -30,19 +31,20 @@ export const mainTheme = {
       // defaultHoverColor: "#FFFFFF",
       // defaultActiveBg: "#65000b",
       // defaultActiveColor: "#FFFFFF",
-      colorLinkHover: "#57BBE6",
+      colorLinkHover: "#9e4a74",
       controlHeightLG: 56,
-      borderRadiusLG: 16,
+      borderRadiusLG: 30,
       borderRadius: 8,
       primaryShadow: "0 0px 0 rgba(5, 145, 255, 0.1)",
+      fontFamily: "Lato",
     },
     //   Form: {
     //     labelColor: "rgb(255, 255, 255)",
     //   },
     Input: {
       controlHeightLG: 57,
-      borderRadiusLG: 16,
-      colorBorder: "#61D0FF",
+      borderRadiusLG: 0,
+      colorBorder: "#333333",
       colorBorderLG: "#61D0FF",
       // activeBg: "rgb(255, 255, 255)",
       // colorIcon: "#1F2852",
@@ -50,7 +52,7 @@ export const mainTheme = {
       // activeBorderColor: "#1F2852",
     },
     DatePicker: {
-      "colorBorder": "#61D0FF",
+      colorBorder: "#61D0FF",
       colorTextPlaceholder: "black",
     },
     // InputPassword: {

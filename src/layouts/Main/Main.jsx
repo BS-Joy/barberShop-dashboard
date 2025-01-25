@@ -5,7 +5,7 @@ import Header from "./Header";
 
 const Main = () => {
   return (
-    <div className="flex text-start bg-white min-h-screen">
+    <div className="flex text-start bg-[#ECE8EA] min-h-screen">
       <div className="">
         <Sidebar />
       </div>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +9,7 @@
   padding: 0;
   text-align: start;
   border: none;
+  font-family: "Lato", serif;
 }
 
 
@@ -41,7 +43,8 @@
   scrollbar-width: thin;
 } */
 #message-uesrs::-webkit-scrollbar {
-  width: 4px; /* Width of the scrollbar */
+  width: 4px;
+  /* Width of the scrollbar */
 }
 
 
@@ -49,19 +52,63 @@
 
 
 #message-uesrs::-webkit-scrollbar-track {
-  background: transparent; /* Background of the track */
+  background: transparent;
+  /* Background of the track */
 }
 
 #message-uesrs::-webkit-scrollbar-thumb {
-  background: #61D0FF; /* Color of the scrollbar thumb */
-  border-radius: 20px; /* Rounded corners */
+  background: #61D0FF;
+  /* Color of the scrollbar thumb */
+  border-radius: 20px;
+  /* Rounded corners */
 }
 
 #message-uesrs::-webkit-scrollbar-thumb:hover {
-  background: #61D0FF; /* Darker thumb when hovered */
+  background: #61D0FF;
+  /* Darker thumb when hovered */
 }
 
+.ant-input {
+  border: none;
+  /* Remove all borders */
+  border-bottom: 1px solid;
+  /* Add only the bottom border */
+  border-radius: 0;
+  /* Remove rounded corners */
+  position: relative;
+  /* Set relative positioning */
+  padding-left: 40px;
+  /* Add left padding */
+  background: transparent;
+  /* Set the background to transparent */
+}
 
+.ant-input:focus-within {
+  box-shadow: none;
+  /* Remove shadow when focused */
+}
 
+.ant-input-affix-wrapper {
+  border: none;
+  /* Remove all borders */
+  border-bottom: 1px solid;
+  /* Add only the bottom border */
+  border-radius: 0;
+  /* Remove rounded corners */
+  position: relative;
+  /* Set relative positioning */
+  padding-left: 40px;
+  /* Add left padding */
+  background: transparent;
+  /* Set the background to transparent */
+}
 
+.ant-input-affix-wrapper:focus-within {
+  box-shadow: none;
+}
 
+.header-searchbar {
+  /* background-color: red; */
+  border-bottom: none;
+  padding-left: 15px;
+}

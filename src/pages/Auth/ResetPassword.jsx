@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import image from "../../assets/images/reset-pass.png";
 // import ComponentContainer from "../../Components/ComponentContainer";
 import PageHeading from "../../Components/PageHeading";
+import AuthLayoutWrapper from "./AuthLayoutWrapper";
+import InputFieldIconWrapper from "../../Components/InputFieldIconWrapper";
+import { MdLockOutline } from "react-icons/md";
 // import { useChangePasswordMutation } from "../../redux/features/Auth/authApi";
 // import { useDispatch, useSelector } from "react-redux";
 // import Swal from "sweetalert2";
@@ -15,7 +18,6 @@ const ResetPassword = () => {
   // const dispatch = useDispatch();
   // const { token } = useSelector((state) => state.auth);
   // const [mutation, { isLoading }] = useChangePasswordMutation();
-
 
   const onFinish = async (values) => {
     navigate("/auth");
@@ -58,78 +60,85 @@ const ResetPassword = () => {
     // }
   };
   return (
-      <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8">
-        <div className="lg:border-r-2 border-primary mx-auto w-[96%] lg:p-[10%] ">
-          <img src={image} alt="" />
+    <AuthLayoutWrapper>
+      <div className="w-full py-[44px] lg:px-[44px] space-y-8">
+        <div className="flex flex-col items-center lg:items-start">
+          <PageHeading
+            backPath={-1}
+            title={"Set new password"}
+            disbaledBackBtn={false}
+          />
+          {/* <p className=" drop-shadow text-[#464343] mt-5">
+            Your password must be 8-10 character long.
+          </p> */}
         </div>
-        <div className="lg:p-[5%] order-first lg:order-last">
-          <div className="w-full py-[44px] lg:px-[44px] space-y-8">
-            <div className="flex flex-col items-center lg:items-start">
-              <PageHeading backPath={-1} title={"Set new password"} disbaledBackBtn={true} />
-              <p className=" drop-shadow text-[#464343] mt-5">
-                Your password must be 8-10 character long.
-              </p>
-            </div>
-            <Form
-              name="normal_login"
-              layout="vertical"
-              initialValues={{
-                remember: true,
-              }}
-              requiredMark={false}
-              onFinish={onFinish}
+        <Form
+          name="normal_login"
+          layout="vertical"
+          initialValues={{
+            remember: true,
+          }}
+          requiredMark={false}
+          onFinish={onFinish}
+        >
+          <Form.Item
+            // label={<span className="font-medium text-base">New Password</span>}
+            name="newPassword"
+            rules={[
+              {
+                required: true,
+                message: "Please input new password!",
+              },
+            ]}
+          >
+            <Input.Password size="large" placeholder="Enter your password" />
+            <InputFieldIconWrapper>
+              <MdLockOutline size="16px" />
+            </InputFieldIconWrapper>
+          </Form.Item>
+          <Form.Item
+            // label={
+            //   <span className="font-medium text-base">
+            //     Confirm New Password
+            //   </span>
+            // }
+            name="rePassword"
+            rules={[
+              {
+                required: true,
+                message: "Please Re-Enter the password!",
+              },
+              ({ getFieldValue }) => ({
+                validator(_, value) {
+                  if (!value || getFieldValue("newPassword") === value) {
+                    return Promise.resolve();
+                  }
+                  return Promise.reject(
+                    new Error("The new password that you entered do not match!")
+                  );
+                },
+              }),
+            ]}
+          >
+            <Input.Password size="large" placeholder="Re-enter your password" />
+            <InputFieldIconWrapper>
+              <MdLockOutline size="16px" />
+            </InputFieldIconWrapper>
+          </Form.Item>
+          <div className="w-full flex justify-center pt-4 ">
+            <Button
+              // disabled={isLoading}
+              type="primary"
+              size="large"
+              htmlType="submit"
+              className="w-full px-2 "
             >
-              <Form.Item
-                label={<span className="font-medium text-base">New Password</span>}
-                name="newPassword"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input new password!",
-                  },
-                ]}
-              >
-                <Input.Password size="large" placeholder="**********" />
-              </Form.Item>
-              <Form.Item
-                label={<span className="font-medium text-base">Confirm New Password</span>}
-                name="rePassword"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please Re-Enter the password!",
-                  },
-                  ({ getFieldValue }) => ({
-                    validator(_, value) {
-                      if (!value || getFieldValue("newPassword") === value) {
-                        return Promise.resolve();
-                      }
-                      return Promise.reject(
-                        new Error(
-                          "The new password that you entered do not match!"
-                        )
-                      );
-                    },
-                  }),
-                ]}
-              >
-                <Input.Password size="large" placeholder="**********" />
-              </Form.Item>
-              <div className="w-full flex justify-center pt-4 ">
-                  <Button
-                    // disabled={isLoading}
-                    type="primary"
-                    size="large"
-                    htmlType="submit"
-                    className="w-full px-2 "
-                  >
-                    Reset Password
-                  </Button>
-              </div>
-            </Form>
+              Reset Password
+            </Button>
           </div>
-        </div>
+        </Form>
       </div>
+    </AuthLayoutWrapper>
   );
 };
 

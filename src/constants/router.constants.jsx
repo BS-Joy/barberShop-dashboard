@@ -18,7 +18,7 @@ import {
   MdOutlineSecurityUpdateWarning,
 } from "react-icons/md";
 import HostDetails from "../pages/Main/Host/HostDetails";
-import {  LuWallet } from "react-icons/lu";
+import { LuWallet } from "react-icons/lu";
 import { FaServicestack } from "react-icons/fa6";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { PiHandWithdrawBold } from "react-icons/pi";
@@ -27,6 +27,7 @@ import TrainerPost from "../pages/Main/ApproveRequest/TrainerPost";
 import Review from "../pages/Main/Users/Review";
 import StudioList from "../pages/Main/StudioList/StudioList";
 import TrainerList from "../pages/Main/TrainerList/TrainerList";
+import { GoDotFill } from "react-icons/go";
 
 export const dashboardItems = [
   {
@@ -43,13 +44,15 @@ export const dashboardItems = [
       {
         name: "Studio Post",
         path: "approveRequest/all-earnings",
-        icon: LuWallet,
+        // icon: LuWallet,
+        icon: GoDotFill,
         element: <StudioPost />,
       },
       {
         name: "Trainer Post",
         path: "approveRequest/withdraw",
-        icon: PiHandWithdrawBold,
+        // icon: PiHandWithdrawBold,
+        icon: GoDotFill,
         element: <TrainerPost />,
       },
     ],
@@ -59,8 +62,8 @@ export const dashboardItems = [
     element: <Notifications />,
   },
   {
-    path: '/reviews',
-    element: <Review></Review>
+    path: "/reviews",
+    element: <Review></Review>,
   },
   {
     name: "Users",
@@ -92,7 +95,8 @@ export const dashboardItems = [
       {
         name: "Profile",
         path: "settings/prifile",
-        icon: CiUser,
+        // icon: CiUser,
+        icon: GoDotFill,
         element: <MyProfile />,
       },
       {
@@ -101,7 +105,8 @@ export const dashboardItems = [
       },
       {
         name: "Terms & Services",
-        icon: FaServicestack,
+        // icon: FaServicestack,
+        icon: GoDotFill,
         path: "settings/terms-conditions",
         element: <TermsConditions />,
       },
@@ -111,7 +116,8 @@ export const dashboardItems = [
       },
       {
         name: "Privacy Policy",
-        icon: MdOutlineSecurityUpdateWarning,
+        // icon: MdOutlineSecurityUpdateWarning,
+        icon: GoDotFill,
         path: "settings/privacy-policy",
         element: <PrivacyPolicy />,
       },
@@ -121,7 +127,8 @@ export const dashboardItems = [
       },
       {
         name: "About Us",
-        icon: BiMessageSquareDetail,
+        // icon: BiMessageSquareDetail,
+        icon: GoDotFill,
         path: "settings/about-us",
         element: <AboutUs />,
       },

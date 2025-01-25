@@ -4,8 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#ffebff",
-        playground: "#052255"
+        primary: "#3D1027",
+        playground: "#052255",
+      },
+      fontFamily: {
+        lato: ["lato", "serif"],
       },
     },
   },

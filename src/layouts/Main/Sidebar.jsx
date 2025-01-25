@@ -1,16 +1,17 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import logo from "../../assets/images/logo1.png";
+import logo from "../../assets/images/Logo.png";
 import { createElement, useEffect, useState } from "react";
 import { routeLinkGenerators } from "../../utils/routeLinkGenerators";
 import { dashboardItems } from "../../constants/router.constants";
 import Swal from "sweetalert2";
-import { FiLogOut } from "react-icons/fi";
-import { MdOutlineArrowRight } from "react-icons/md";
+import { TbLogout } from "react-icons/tb";
+import { FaChevronRight } from "react-icons/fa6";
 import { cn } from "../../lib/utils";
 const Sidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [openNome, setOpenNome] = useState({});
+
   const handleLogOut = () => {
     Swal.fire({
       text: "Are you sure you want to logout?",
@@ -29,9 +30,11 @@ const Sidebar = () => {
       }
     });
   };
+
   useEffect(() => {
     // console.log(location.pathname.includes("earnings"));
   }, [location.pathname]);
+
   return (
     <div className="fixed top-0 left-0 w-[326px] min-h-screen h-full p-6 pr-0 ">
       <div className="h-full flex flex-col justify-between bg-primary pt-[50px] border drop-shadow rounded-lg">
@@ -51,9 +54,9 @@ const Sidebar = () => {
                         }));
                       }}
                       className={cn(
-                        "outline-none hover:text-white text-[20px] hover:bg-playground w-full px-4 py-3 flex items-center justify-between gap-3 text-lg transition-all rounded-lg",
+                        "outline-none group text-white hover:text-primary text-[20px] hover:bg-white w-full px-4 py-3 flex items-center justify-between gap-3 text-lg transition-all rounded-lg",
                         {
-                          "bg-playground text-white":
+                          "bg-white text-primary":
                             name === openNome?.name ||
                             (location.pathname.includes(rootPath) &&
                               !openNome.name),
@@ -64,13 +67,16 @@ const Sidebar = () => {
                         <div>{createElement(icon, { size: "20" })}</div>
                         <span>{name}</span>
                       </div>
-                      <MdOutlineArrowRight
-                        className={cn("text-gray-500", {
-                          "rotate-90 text-white":
-                            name === openNome?.name ||
-                            (location.pathname.includes(rootPath) &&
-                              !openNome.name),
-                        })}
+                      <FaChevronRight
+                        className={cn(
+                          "text-white hover:text-primary group-hover:text-primary",
+                          {
+                            "rotate-90 text-primary":
+                              name === openNome?.name ||
+                              (location.pathname.includes(rootPath) &&
+                                !openNome.name),
+                          }
+                        )}
                         size={23}
                       />
                     </button>
@@ -90,11 +96,11 @@ const Sidebar = () => {
                           key={inx}
                           to={subPath}
                           className={({ isActive }) =>
-                            isActive
-                              ? "bg-playground text-white" +
-                                " w-full px-4 py-1 flex items-center justify-start gap-3 transition-all rounded-sm"
-                              : "text-[#646464] hover:text-white hover:bg-playground" +
-                                " w-full px-4 py-1 flex items-center justify-start gap-3 transition-all rounded-sm"
+                            `w-full px-4 py-1 flex items-center justify-start gap-3 transition-all rounded-sm ${
+                              isActive
+                                ? "bg-white text-primary"
+                                : "text-white hover:text-primary hover:bg-white"
+                            }`
                           }
                         >
                           <div>{createElement(subIcon, { size: "17" })}</div>
@@ -115,11 +121,11 @@ const Sidebar = () => {
                     <NavLink
                       to={path}
                       className={({ isActive }) =>
-                        isActive
-                          ? "bg-playground text-white" +
-                            " w-full px-4 py-3 flex items-center justify-start gap-3 text-lg transition-all rounded-lg"
-                          : " hover:text-white text-[20px] hover:bg-playground" +
-                            " w-full px-4 py-3 flex items-center justify-start gap-3 text-lg transition-all rounded-lg"
+                        `w-full px-4 py-3 flex items-center justify-start gap-3 text-lg transition-all rounded-lg ${
+                          isActive
+                            ? "bg-white text-primary"
+                            : "hover:text-primary hover:bg-white text-[20px] text-white"
+                        }`
                       }
                     >
                       <div>{createElement(icon, { size: "20" })}</div>
@@ -133,9 +139,9 @@ const Sidebar = () => {
         <div className="p-4 mt-auto text-center">
           <button
             onClick={handleLogOut}
-            className="bg-light-gray w-full bg-[#afacfb] text-black  font-semibold px-4 py-3 flex items-center justify-start gap-3 text-lg outline-none rounded-lg"
+            className="bg-light-gray w-full text-white font-semibold px-4 py-3 flex items-center justify-start gap-3 text-lg outline-none rounded-full border"
           >
-            <FiLogOut className="text-red-400" size={20} />
+            <TbLogout size={20} />
             <span>Logout</span>
           </button>
         </div>

@@ -9,10 +9,10 @@ const PageHeading = ({ title, backPath, disbaledBackBtn, className }) => {
     <div className={cn("flex items-center gap-1", className)}>
       {!disbaledBackBtn && (
         <button
-          className="outline-none px-2"
+          className="outline-none pr-2"
           onClick={() => navigate(backPath || "/settings")}
         >
-          <FaArrowLeftLong size={22} />
+          <FaChevronLeft size={22} />
         </button>
       )}
       {!!title && <h1 className="text-[25px] font-medium">{title}</h1>}
