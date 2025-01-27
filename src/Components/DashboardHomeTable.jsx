@@ -1,10 +1,7 @@
 import { Table } from "antd";
 import { Link } from "react-router-dom";
 
-
 const DashboardHomeTable = () => {
-
-
   const columns = [
     {
       title: "#SI No.",
@@ -30,11 +27,14 @@ const DashboardHomeTable = () => {
     {
       title: "See Review",
       key: "Review",
-      aligen: 'center',
+      aligen: "center",
       render: (_, data) => (
         <div className="  items-center justify-around">
           {/* Review Icon */}
-          <Link to={'/reviews'} className="btn bg-[#052255] text-white px-3 py-1 text-sm rounded-full">
+          <Link
+            to={"/reviews"}
+            className="btn bg-[#052255] text-white px-3 py-1 text-sm rounded-full"
+          >
             {/* <svg
                       width="24"
                       height="24"
@@ -69,7 +69,7 @@ const DashboardHomeTable = () => {
   }
 
   return (
-    <div className="rounded-lg border py-4 px-6 bg-white shadow-lg mt-8">
+    <div className="rounded-lg border py-4 px-6 bg-white shadow-lg w-full">
       <h3 className="text-2xl font-semibold mb-4">Recent Users</h3>
 
       {/* Ant Design Table */}
@@ -79,8 +79,6 @@ const DashboardHomeTable = () => {
         pagination={{ position: ["bottomCenter"] }}
         className="rounded-lg"
       />
-
-
     </div>
   );
 };

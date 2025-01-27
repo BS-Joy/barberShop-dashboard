@@ -23,7 +23,7 @@ const dashboardSummaryData = [
 
 export default function DashboardSummary() {
   return (
-    <div className="grid grid-cols-3 gap-x-[22px] w-full">
+    <div className="flex gap-6 w-full mb-6">
       {dashboardSummaryData?.map((data, index) => (
         <DashboardSummaryCard key={index} data={data} />
       ))}

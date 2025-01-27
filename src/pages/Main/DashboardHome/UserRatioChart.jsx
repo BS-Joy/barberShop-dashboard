@@ -9,10 +9,7 @@ const data = [
 
 const UserRatioChart = () => {
   return (
-    <div
-      className="p-6 border rounded-lg shadow-md"
-      style={{ borderColor: "#D4C2CC", backgroundColor: "#FFF" }}
-    >
+    <div className="p-6 border border-primary rounded-xl w-full bg-white">
       {/* Title */}
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-lg font-bold text-[#3D1027]">User Ratio</h3>

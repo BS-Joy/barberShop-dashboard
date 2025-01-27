@@ -1,6 +1,11 @@
 import { CiSettings, CiUser } from "react-icons/ci";
-import { GrMoney } from "react-icons/gr";
-import { RiDashboardHorizontalFill } from "react-icons/ri";
+import {
+  HiOutlineLibrary,
+  HiOutlineCreditCard,
+  HiOutlineViewGridAdd,
+  HiOutlineCog,
+} from "react-icons/hi";
+import { LuLayoutDashboard } from "react-icons/lu";
 import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
 import Guests from "../pages/Main/Users/Users";
 import MyProfile from "../pages/Profile/MyProfile";
@@ -12,11 +17,12 @@ import EditPrivacyPolicy from "../pages/Settings/EditPrivacyPolicy";
 import EditAboutUs from "../pages/Settings/EditAboutUs";
 import AboutUs from "../pages/Settings/AboutUs";
 import Notifications from "../pages/Main/Notifications/Notifications";
-import { FaUsers } from "react-icons/fa";
+import { HiOutlineUserGroup } from "react-icons/hi2";
 import {
   MdOutlineAdminPanelSettings,
   MdOutlineSecurityUpdateWarning,
 } from "react-icons/md";
+import { TbPhoto } from "react-icons/tb";
 import HostDetails from "../pages/Main/Host/HostDetails";
 import { LuWallet } from "react-icons/lu";
 import { FaServicestack } from "react-icons/fa6";
@@ -33,27 +39,75 @@ export const dashboardItems = [
   {
     name: "Dashboard",
     path: "/",
-    icon: RiDashboardHorizontalFill,
+    icon: LuLayoutDashboard,
     element: <DashboardHome />,
   },
   {
-    name: "Approve Request",
-    rootPath: "approveRequest",
-    icon: GrMoney,
+    name: "Users",
+    path: "users",
+    icon: HiOutlineUserGroup,
+    element: <Guests />,
+  },
+  {
+    name: "Salons",
+    rootPath: "salon",
+    icon: HiOutlineLibrary,
     children: [
       {
-        name: "Studio Post",
-        path: "approveRequest/all-earnings",
+        name: "Salon Request",
+        path: "salon/salon-request",
         // icon: LuWallet,
         icon: GoDotFill,
         element: <StudioPost />,
       },
       {
-        name: "Trainer Post",
-        path: "approveRequest/withdraw",
+        name: "Salon Information",
+        path: "salons/salon-information",
         // icon: PiHandWithdrawBold,
         icon: GoDotFill,
         element: <TrainerPost />,
+      },
+      {
+        name: "Block List",
+        path: "salon/salon-block-list",
+        // icon: LuWallet,
+        icon: GoDotFill,
+        element: <StudioPost />,
+      },
+    ],
+  },
+  {
+    name: "Income",
+    rootPath: "income",
+    icon: HiOutlineCreditCard,
+    children: [
+      {
+        name: "Daily",
+        path: "income/dalily",
+        // icon: LuWallet,
+        icon: GoDotFill,
+        element: <StudioPost />,
+      },
+      {
+        name: "Weekly",
+        path: "income/weekly",
+        // icon: PiHandWithdrawBold,
+        icon: GoDotFill,
+        element: <TrainerPost />,
+      },
+      {
+        name: "Monthly",
+        path: "income/monthly",
+        // icon: LuWallet,
+        icon: GoDotFill,
+        element: <StudioPost />,
+      },
+      {
+        name: "Wallet",
+        path: "income/wallet",
+        // icon: LuWallet,
+        icon: GoDotFill,
+        element: <StudioPost />,
       },
     ],
   },
@@ -65,22 +119,22 @@ export const dashboardItems = [
     path: "/reviews",
     element: <Review></Review>,
   },
+  // {
+  //   name: "Users",
+  //   path: "users",
+  //   icon: FaUsers,
+  //   element: <Guests />,
+  // },
   {
-    name: "Users",
-    path: "users",
-    icon: FaUsers,
-    element: <Guests />,
-  },
-  {
-    name: "Studio List ",
-    path: "studioList",
-    icon: MdOutlineAdminPanelSettings,
+    name: "Banner",
+    path: "banner",
+    icon: TbPhoto,
     element: <StudioList />,
   },
   {
-    name: "Trainer List  ",
-    path: "trainerList",
-    icon: MdOutlineAdminPanelSettings,
+    name: "Categories",
+    path: "categories",
+    icon: HiOutlineViewGridAdd,
     element: <TrainerList />,
   },
   {
@@ -90,7 +144,7 @@ export const dashboardItems = [
   {
     name: "Settings",
     rootPath: "settings",
-    icon: CiSettings,
+    icon: HiOutlineCog,
     children: [
       {
         name: "Profile",

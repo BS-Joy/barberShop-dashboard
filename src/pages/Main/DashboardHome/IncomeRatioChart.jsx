@@ -51,7 +51,7 @@ const IncomeRatioChart = () => {
   };
 
   return (
-    <div className="p-4 border rounded-lg shadow-md bg-white relative">
+    <div className="p-4 border border-primary rounded-xl bg-white relative w-full">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-lg font-bold text-primary">Income Ratio</h3>
         <Select

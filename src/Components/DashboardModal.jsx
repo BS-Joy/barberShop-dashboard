@@ -25,7 +25,9 @@ const DashboardModal = ({
       footer={null}
       closeIcon={false}
       style={{
-        maxWidth: maxWidth || "444px",
+        maxWidth: maxWidth || "100%",
+        paddingBlock: "15px",
+        paddingInline: "20px",
       }}
     >
       <div>
@@ -34,7 +36,7 @@ const DashboardModal = ({
             onClick={handleCancel}
             type="primary"
             danger
-            className="absolute top-0 right-0 text-white bg-[#EB5757] shadow-inner px-2.5 py-2 rounded-none rounded-bl-xl rounded-tr-md"
+            className="absolute top-2 right-0 text-primary px-2.5 py-2 rounded-none rounded-bl-xl rounded-tr-md"
           >
             <IoMdClose size={23} />
           </button>

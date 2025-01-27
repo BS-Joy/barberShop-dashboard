@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         primary: "#3D1027",
-        playground: "#052255",
+        playground: "#ECE8EA",
       },
       fontFamily: {
         lato: ["lato", "serif"],

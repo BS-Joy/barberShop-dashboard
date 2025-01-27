@@ -52,8 +52,9 @@ export const mainTheme = {
       // activeBorderColor: "#1F2852",
     },
     DatePicker: {
-      colorBorder: "#61D0FF",
+      colorBorder: "#644052",
       colorTextPlaceholder: "black",
+      outline: "none",
     },
     // InputPassword: {
     //   controlHeightLG: 56,
@@ -79,7 +80,7 @@ export const mainTheme = {
     //     colorTextPlaceholder: "rgba(250, 244, 244, 0.25)",
     //   },
     Table: {
-      colorTextHeading: "#758DFF",
+      // colorTextHeading: "#758DFF",
       colorBgContainer: "#FFFFFF66",
       // colorText: "#ffffff",
       headerBg: "#052255",

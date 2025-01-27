@@ -127,3 +127,19 @@
   border-bottom: none;
   padding-left: 15px;
 }
+
+.salon-request-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.salon-request-body::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.salon-request-body::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+.salon-request-body::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
