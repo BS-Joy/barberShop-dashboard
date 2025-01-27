@@ -7,7 +7,7 @@ import {
 } from "react-icons/hi";
 import { LuLayoutDashboard } from "react-icons/lu";
 import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
-import Guests from "../pages/Main/Users/Users";
+import Users from "../pages/Main/Users/Users";
 import MyProfile from "../pages/Profile/MyProfile";
 import EditMyProfile from "../pages/Profile/EditMyProfile";
 import TermsConditions from "../pages/Settings/TermsConditions";
@@ -46,7 +46,7 @@ export const dashboardItems = [
     name: "Users",
     path: "users",
     icon: HiOutlineUserGroup,
-    element: <Guests />,
+    element: <Users />,
   },
   {
     name: "Salons",

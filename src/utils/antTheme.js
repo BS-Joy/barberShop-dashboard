@@ -80,13 +80,16 @@ export const mainTheme = {
     //     colorTextPlaceholder: "rgba(250, 244, 244, 0.25)",
     //   },
     Table: {
-      // colorTextHeading: "#758DFF",
+      colorTextHeading: "#ff00000",
       colorBgContainer: "#FFFFFF66",
       // colorText: "#ffffff",
-      headerBg: "#052255",
-      headerColor: "#ffffff",
+      headerBg: "transparent",
+      headerColor: "#3D1027",
+      // headerSplitColor: "",
+      borderColor: "#3D1027",
       headerBorderRadius: 0,
       borderRadius: 0,
+
       headerSplitColor: "none",
     },
     // Modal: {
