@@ -4,7 +4,6 @@ import {
   HiOutlinePhone,
   HiOutlineLocationMarker,
 } from "react-icons/hi";
-// import cardImage from "../../ /salon-card-image.png";
 import cardImage from "../../../assets/images/salon-card-image.png";
 
 export default function SalonSummaryCard({ data, showModal }) {

@@ -38,6 +38,11 @@ import MessagePage from "../Components/Messages/MessagePage";
 import SalonRequestPage from "../pages/Main/Salon/request/SalonRequestPage";
 import SalonInformationPage from "../pages/Main/Salon/information/SalonInformationPage";
 import SalonBlockListPage from "../pages/Main/Salon/blockList/SalonBlockListPage";
+import BannerPage from "../pages/Main/banner/BannerPage";
+import AddBannerPage from "../pages/Main/banner/AddBannerPage";
+import CategoryPage from "../pages/Main/category/CategoryPage";
+import AddCategoryPage from "../pages/Main/category/AddCategoryPage";
+import EditCategoryPage from "../pages/Main/category/EditCategoryPage";
 
 export const dashboardItems = [
   {
@@ -148,13 +153,31 @@ export const dashboardItems = [
     name: "Banner",
     path: "banner",
     icon: TbPhoto,
-    element: <StudioList />,
+    element: <BannerPage />,
+  },
+  {
+    // name: "Banner",
+    path: "banner/add-banner",
+    // icon: TbPhoto,
+    element: <AddBannerPage />,
   },
   {
     name: "Categories",
     path: "categories",
     icon: HiOutlineViewGridAdd,
-    element: <TrainerList />,
+    element: <CategoryPage />,
+  },
+  {
+    // name: "Banner",
+    path: "categories/add-category",
+    // icon: TbPhoto,
+    element: <AddCategoryPage />,
+  },
+  {
+    // name: "Banner",
+    path: "categories/edit-category",
+    // icon: TbPhoto,
+    element: <EditCategoryPage />,
   },
   {
     path: "/hosts/:id",

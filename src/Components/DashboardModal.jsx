@@ -9,10 +9,6 @@ const DashboardModal = ({
   children,
   maxWidth,
 }) => {
-  //   const handleOk = () => {
-  //     setIsModalOpen(false);
-  //   };
-
   const handleCancel = () => {
     setIsModalOpen(false);
   };

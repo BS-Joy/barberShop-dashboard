@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         primary: "#3D1027",
+        secondry: "#8B707D",
         playground: "#ECE8EA",
       },
       fontFamily: {
