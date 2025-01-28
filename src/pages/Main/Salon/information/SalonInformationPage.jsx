@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import SalonInformationCard from "./SalonInformationCard";
+import { useState } from "react";
 import DashboardModal from "../../../../Components/DashboardModal";
 import SalonInfoModal from "./SalonInfoModal";
+import SalonSummaryCard from "../SalonSummaryCard";
 
 const salons = [
   {
@@ -86,7 +86,7 @@ const salons = [
   },
 ];
 
-export default function SalonInformation() {
+export default function SalonInformationPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState({});
 
@@ -97,7 +97,7 @@ export default function SalonInformation() {
   return (
     <div className="grid grid-cols-4 gap-6">
       {salons?.map((salon, index) => (
-        <SalonInformationCard data={salon} showModal={showModal} key={index} />
+        <SalonSummaryCard data={salon} showModal={showModal} key={index} />
       ))}
 
       <DashboardModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen}>

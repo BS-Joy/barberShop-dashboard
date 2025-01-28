@@ -1,9 +1,10 @@
 import React from "react";
 import { AudioOutlined, SendOutlined } from "@ant-design/icons";
-import { ConfigProvider, Input } from "antd";
-import { BsFillSendFill } from "react-icons/bs";
+import { Button, ConfigProvider, Input } from "antd";
+import { IoSend } from "react-icons/io5";
 import { GrAttachment } from "react-icons/gr";
-const { Search } = Input;
+// const { Search } = Input;
+
 const suffix = (
   <AudioOutlined
     style={{
@@ -16,21 +17,15 @@ const onSearch = (value, _e, info) => console.log(info?.source, value);
 
 const MessageSendForm = () => {
   return (
-    <div className="flex justify-center items-center gap-4 mt-2">
-      <div>
-        <GrAttachment
-          size={24}
-          className="cursor-pointer text-slate-600 hover:text-slate-700 transition-all"
-        />
-      </div>
+    <div className="flex w-full justify-center items-center gap-4 mt-6">
       <ConfigProvider
         theme={{
           token: {
-            colorPrimary: "#61D0FF",
+            // colorPrimary: "#61D0FF",
           },
           components: {
             Button: {
-              colorBorder: "#61D0FF",
+              // colorBorder: "#61D0FF",
             },
             Input: {
               controlHeight: 50,
@@ -38,13 +33,16 @@ const MessageSendForm = () => {
           },
         }}
       >
-        <Search
-          style={{ width: "400px" }}
-          size=""
-          placeholder="Enter new text"
-          onSearch={onSearch}
-          enterButton={<BsFillSendFill size={18} />}
+        <Input
+          // style={{ width: "400px" }}
+          className="pl-4 py-4 msg-field"
+          placeholder="Enter your message"
+          onChange={onSearch}
         />
+
+        <button type="submit" className=" rounded-lg py-2 bg-none">
+          <IoSend size={"40px"} />
+        </button>
       </ConfigProvider>
     </div>
   );

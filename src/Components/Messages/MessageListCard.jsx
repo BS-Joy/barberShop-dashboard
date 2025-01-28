@@ -3,7 +3,7 @@ import React from "react";
 export default function MessageListCard({ first }) {
   return (
     <div
-      className={`w-full mx-auto bg-white rounded-lg border border-primary p-4 mb-2 ${
+      className={`w-full mx-auto bg-white rounded-lg border border-[#8B707D] p-4 mb-2 ${
         first && "bg-[#D8CFD4] border-[#D8CFD4]"
       }`}
     >

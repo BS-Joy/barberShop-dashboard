@@ -1,8 +1,8 @@
 import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
 import { CiLocationOn } from "react-icons/ci";
 import { useState } from "react";
-import SalonRequestCard from "./SalonRequestCard";
 import DashboardModal from "../../../Components/DashboardModal";
+import SalonRequestModal from "../Salon/request/SalonRequestModal";
 
 const salonData = [
   {
@@ -146,7 +146,7 @@ export default function DashboardSaloonRequests() {
 
       {/* modal */}
       <DashboardModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen}>
-        <SalonRequestCard data={modalData} />
+        <SalonRequestModal data={modalData} />
       </DashboardModal>
     </div>
   );

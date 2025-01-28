@@ -70,7 +70,7 @@ const Header = () => {
 
         {/* messages */}
         <div
-          onClick={(e) => navigate("/notifications")}
+          onClick={(e) => navigate("/messages")}
           className="relative flex items-center justify-center w-14 h-14 rounded-full border bg-white hover:cursor-pointer"
         >
           <PiChatCircleDots

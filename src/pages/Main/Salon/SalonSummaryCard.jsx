@@ -4,9 +4,10 @@ import {
   HiOutlinePhone,
   HiOutlineLocationMarker,
 } from "react-icons/hi";
-import cardImage from "../../../../assets/images/salon-card-image.png";
+// import cardImage from "../../ /salon-card-image.png";
+import cardImage from "../../../assets/images/salon-card-image.png";
 
-export default function SalonInformationCard({ data, showModal }) {
+export default function SalonSummaryCard({ data, showModal }) {
   return (
     <div className=" bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
       <div className="p-4">

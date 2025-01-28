@@ -6,7 +6,6 @@ export default function MessageList() {
   return (
     <div className="bg-white border border-primary rounded-2xl w-full px-6">
       <PageHeading
-        backPath={"/"}
         title={"Message List"}
         disbaledBackBtn={true}
         className="py-6 border-b border-b-primary"

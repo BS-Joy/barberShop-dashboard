@@ -1,6 +1,6 @@
-import pdfIcon from "../../../assets/images/pdf-icon.png";
+import pdfIcon from "../../../../assets/images/pdf-icon.png";
 
-export default function SalonRequestCard({ data }) {
+export default function SalonRequestModal({ data }) {
   console.log(data);
   return (
     <div className="max-w-md mx-auto rounded-lg overflow-hidden">
@@ -9,13 +9,6 @@ export default function SalonRequestCard({ data }) {
           <h2 className="text-xl font-semibold text-primary">{data?.name}</h2>
           <p className="text-[#999999]">see all details about {data?.name}</p>
         </div>
-        {/* <span
-          className={`${
-            statusColor[data?.status]
-          } text-white text-sm font-normal px-2 py-1 rounded`}
-        >
-          {data?.status}
-        </span> */}
       </div>
       <div className="mt-2 pb-2 flex items-center border-b border-b-[#999999]">
         <img

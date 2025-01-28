@@ -34,8 +34,10 @@ import Review from "../pages/Main/Users/Review";
 import StudioList from "../pages/Main/StudioList/StudioList";
 import TrainerList from "../pages/Main/TrainerList/TrainerList";
 import { GoDotFill } from "react-icons/go";
-import SalonInformation from "../pages/Main/Salon/information/SalonInformation";
 import MessagePage from "../Components/Messages/MessagePage";
+import SalonRequestPage from "../pages/Main/Salon/request/SalonRequestPage";
+import SalonInformationPage from "../pages/Main/Salon/information/SalonInformationPage";
+import SalonBlockListPage from "../pages/Main/Salon/blockList/SalonBlockListPage";
 
 export const dashboardItems = [
   {
@@ -60,21 +62,21 @@ export const dashboardItems = [
         path: "salon/salon-request",
         // icon: LuWallet,
         icon: GoDotFill,
-        element: <StudioPost />,
+        element: <SalonRequestPage />,
       },
       {
         name: "Salon Information",
         path: "salons/salon-information",
         // icon: PiHandWithdrawBold,
         icon: GoDotFill,
-        element: <SalonInformation />,
+        element: <SalonInformationPage />,
       },
       {
         name: "Block List",
         path: "salon/salon-block-list",
         // icon: LuWallet,
         icon: GoDotFill,
-        element: <StudioPost />,
+        element: <SalonBlockListPage />,
       },
     ],
   },
