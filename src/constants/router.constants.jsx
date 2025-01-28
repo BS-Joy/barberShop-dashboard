@@ -117,6 +117,13 @@ export const dashboardItems = [
     element: <Notifications />,
   },
   {
+    // name: "Profile",
+    path: "profile",
+    // icon: CiUser,
+    // icon: GoDotFill,
+    element: <MyProfile />,
+  },
+  {
     path: "/reviews",
     element: <Review></Review>,
   },
@@ -147,13 +154,6 @@ export const dashboardItems = [
     rootPath: "settings",
     icon: HiOutlineCog,
     children: [
-      {
-        name: "Profile",
-        path: "settings/prifile",
-        // icon: CiUser,
-        icon: GoDotFill,
-        element: <MyProfile />,
-      },
       {
         path: "settings/prifile/edit",
         element: <EditMyProfile />,
