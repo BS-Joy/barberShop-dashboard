@@ -6,21 +6,18 @@ import { IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { FiEye } from "react-icons/fi";
+import UserDetailsModal from "./UserDetailsModal";
 
 const Users = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState({});
+
   const showModal = (data) => {
     setIsModalOpen(true);
     setModalData(data);
   };
+
   const columns = [
-    // {
-    //   title: "#SI No.",
-    //   dataIndex: "transIs",
-    //   key: "transIs",
-    //   render: (text) => <a>{text}</a>,
-    // },
     {
       title: "User Name",
       dataIndex: "name",
@@ -46,7 +43,7 @@ const Users = () => {
           <button className="mr-3">
             <IoChatbubbleEllipsesOutline size={"18px"} color="#3D1027" />
           </button>
-          <button>
+          <button onClick={() => showModal(data)}>
             <FiEye size={"18px"} color="#3D1027" />
           </button>
         </div>
@@ -78,6 +75,10 @@ const Users = () => {
         pagination={{ position: ["bottomRight"] }}
         // className="rounded-3xl"
       />
+
+      <DashboardModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen}>
+        <UserDetailsModal data={modalData} />
+      </DashboardModal>
     </div>
   );
 };
