@@ -35,6 +35,7 @@ import StudioList from "../pages/Main/StudioList/StudioList";
 import TrainerList from "../pages/Main/TrainerList/TrainerList";
 import { GoDotFill } from "react-icons/go";
 import SalonInformation from "../pages/Main/Salon/information/SalonInformation";
+import MessagePage from "../Components/Messages/MessagePage";
 
 export const dashboardItems = [
   {
@@ -122,6 +123,14 @@ export const dashboardItems = [
     // icon: CiUser,
     // icon: GoDotFill,
     element: <MyProfile />,
+  },
+  {
+    path: "profile/edit-profile",
+    element: <EditMyProfile />,
+  },
+  {
+    path: "messages",
+    element: <MessagePage />,
   },
   {
     path: "/reviews",

@@ -91,7 +91,7 @@ const Header = () => {
             size={"10px"}
             strokeWidth={1.3}
             className={`text-primary border border-primary bg-[#ffffff] hover:bg-primary hover:text-white w-[55px] h-[55px] rounded-full p-2 shadow-sm transition-all ${
-              currentPath === "/profile" && "bg-primary text-white"
+              currentPath.includes("/profile") && "bg-primary text-white"
             }`}
           />
         </div>

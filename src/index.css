@@ -70,17 +70,11 @@
 
 .ant-input {
   border: none;
-  /* Remove all borders */
   border-bottom: 1px solid;
-  /* Add only the bottom border */
   border-radius: 0;
-  /* Remove rounded corners */
   position: relative;
-  /* Set relative positioning */
-  padding-left: 40px;
-  /* Add left padding */
+  /* padding-left: 40px; */
   background: transparent;
-  /* Set the background to transparent */
 }
 
 .ant-input:focus-within {
@@ -90,17 +84,11 @@
 
 .ant-input-affix-wrapper {
   border: none;
-  /* Remove all borders */
   border-bottom: 1px solid;
-  /* Add only the bottom border */
   border-radius: 0;
-  /* Remove rounded corners */
   position: relative;
-  /* Set relative positioning */
-  padding-left: 40px;
-  /* Add left padding */
+  /* padding-left: 40px; */
   background: transparent;
-  /* Set the background to transparent */
 }
 
 .ant-input-affix-wrapper:focus-within {
@@ -145,5 +133,22 @@
 }
 
 .salon-request-body::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.msg-list::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+.msg-list::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.msg-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+.msg-list::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }

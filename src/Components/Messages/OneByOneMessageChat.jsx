@@ -20,7 +20,10 @@ const OneByOneMessageChat = ({ messages, className }) => {
   return (
     <div
       id="message-uesrs"
-      className={cn("max-h-[65vh] overflow-y-scroll pr-3", className)}
+      className={cn(
+        " overflow-y-scroll pr-3 w-full bg-white border border-primary rounded-2xl",
+        className
+      )}
     >
       <div>
         {Object.keys(groupedMessages).map((date) => (
@@ -38,7 +41,7 @@ const OneByOneMessageChat = ({ messages, className }) => {
                 }`}
               >
                 <div
-                  className={cn("mb-1 p-3 text-white rounded-md", {
+                  className={cn("mb-1 p-3 text-primary border rounded-md", {
                     "bg-green-playground rounded-tl-none":
                       message.sender !== "user1",
                     " bg-info rounded-br-none": message.sender == "user1",
@@ -61,7 +64,7 @@ const OneByOneMessageChat = ({ messages, className }) => {
 
 // Utility function
 const groupMessagesByDate = (messages) => {
-  return messages.reduce((grouped, message) => {
+  return messages?.reduce((grouped, message) => {
     const date = dayjs(message.timestamp).format("YYYY-MM-DD");
     if (!grouped[date]) {
       grouped[date] = [];
