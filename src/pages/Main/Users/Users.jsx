@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, DatePicker, Input, Table } from "antd";
+import { Button, DatePicker, Input, Pagination, Table } from "antd";
 import { FiAlertCircle } from "react-icons/fi";
 import DashboardModal from "../../../Components/DashboardModal";
 import { IoSearch } from "react-icons/io5";
@@ -11,10 +11,17 @@ import UserDetailsModal from "./UserDetailsModal";
 const Users = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState({});
+  const [current, setCurrent] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
   const showModal = (data) => {
     setIsModalOpen(true);
     setModalData(data);
+  };
+
+  const handlePageChange = (page, pageSize) => {
+    setCurrent(page);
+    setPageSize(pageSize);
   };
 
   const columns = [
@@ -55,8 +62,8 @@ const Users = () => {
   for (let index = 0; index < 6; index++) {
     data.push({
       transIs: `${index + 1}`,
-      name: "Henry",
-      Email: "sharif@gmail.com",
+      name: `Henry ${index + 1}`,
+      Email: `sharif@gmail.com`,
       Phone: "+1 2746478994",
       Review: "See Review",
       date: "16 Apr 2024",
@@ -72,8 +79,40 @@ const Users = () => {
       <Table
         columns={columns}
         dataSource={data}
-        pagination={{ position: ["bottomRight"] }}
-        // className="rounded-3xl"
+        pagination={false}
+        footer={() => (
+          <div
+            className="font-lato"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <span className="text-primary text-[18px]">SHOWING 1-5 OF 250</span>
+            <Pagination
+              itemRender={(page, type, originalElement) => {
+                if (type === "page") {
+                  return (
+                    <span
+                      style={{
+                        backgroundColor: page === current ? "#3D1027" : "",
+                        color: page === current ? "#FFFFFF" : "",
+                      }}
+                    >
+                      {page}
+                    </span>
+                  );
+                }
+                return originalElement;
+              }}
+              current={current}
+              pageSize={pageSize}
+              total={data.length}
+              onChange={handlePageChange}
+            />
+          </div>
+        )}
       />
 
       <DashboardModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen}>

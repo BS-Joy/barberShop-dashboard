@@ -122,6 +122,10 @@
   color: #3D1027;
 } */
 
+.ant-table {
+  font-family: "Lato", serif;
+}
+
 .header-searchbar {
   /* background-color: red; */
   border-bottom: none;

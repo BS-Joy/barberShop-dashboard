@@ -34,6 +34,7 @@ import Review from "../pages/Main/Users/Review";
 import StudioList from "../pages/Main/StudioList/StudioList";
 import TrainerList from "../pages/Main/TrainerList/TrainerList";
 import { GoDotFill } from "react-icons/go";
+import SalonInformation from "../pages/Main/Salon/information/SalonInformation";
 
 export const dashboardItems = [
   {
@@ -65,7 +66,7 @@ export const dashboardItems = [
         path: "salons/salon-information",
         // icon: PiHandWithdrawBold,
         icon: GoDotFill,
-        element: <TrainerPost />,
+        element: <SalonInformation />,
       },
       {
         name: "Block List",

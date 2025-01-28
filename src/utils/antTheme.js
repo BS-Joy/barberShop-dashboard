@@ -5,6 +5,7 @@ export const mainTheme = {
   token: {
     colorPrimary: "#3D1027",
     colorInfo: "#591839",
+    fontFamily: "Lato",
   },
   components: {
     //   Table: {
@@ -56,6 +57,10 @@ export const mainTheme = {
       colorTextPlaceholder: "black",
       outline: "none",
     },
+    Pagination: {
+      itemActiveBg: "#3D1027",
+      itemActiveColor: "#ffffff",
+    },
     // InputPassword: {
     //   controlHeightLG: 56,
     //   colorBorder: "#69458B",
@@ -86,6 +91,7 @@ export const mainTheme = {
       headerBg: "transparent",
       headerColor: "#3D1027",
       // headerSplitColor: "",
+      footerBg: "#fffffff",
       borderColor: "#3D1027",
       headerBorderRadius: 0,
       borderRadius: 0,
