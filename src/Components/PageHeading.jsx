@@ -3,7 +3,13 @@ import { FaArrowLeftLong, FaChevronLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { cn } from "../lib/utils";
 
-const PageHeading = ({ title, backPath, disbaledBackBtn, className }) => {
+const PageHeading = ({
+  title,
+  backPath,
+  disbaledBackBtn,
+  className,
+  titleClass,
+}) => {
   const navigate = useNavigate();
   return (
     <div className={cn("flex items-center gap-1", className)}>
@@ -15,7 +21,9 @@ const PageHeading = ({ title, backPath, disbaledBackBtn, className }) => {
           <FaChevronLeft size={22} color="#3D1027" />
         </button>
       )}
-      {!!title && <h1 className="text-[25px] font-medium">{title}</h1>}
+      {!!title && (
+        <h1 className={cn("text-[25px] font-medium", titleClass)}>{title}</h1>
+      )}
     </div>
   );
 };

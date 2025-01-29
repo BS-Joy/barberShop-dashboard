@@ -10,8 +10,8 @@ import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
 import Users from "../pages/Main/Users/Users";
 import MyProfile from "../pages/Profile/MyProfile";
 import EditMyProfile from "../pages/Profile/EditMyProfile";
-import TermsConditions from "../pages/Settings/TermsConditions";
-import EditTermsConditions from "../pages/Settings/EditTermsConditions";
+import TermsOfServices from "../pages/Settings/TermsOfServices";
+import EditTermsOfServices from "../pages/Settings/EditTermsOfServices";
 import PrivacyPolicy from "../pages/Settings/PrivacyPolicy";
 import EditPrivacyPolicy from "../pages/Settings/EditPrivacyPolicy";
 import EditAboutUs from "../pages/Settings/EditAboutUs";
@@ -49,6 +49,9 @@ import VerifyEmail from "../pages/Settings/VerifyEmail";
 import UpdatePassword from "../pages/Settings/UpdatePassword";
 import LogInActivity from "../pages/Settings/LogInActivity";
 import TrashPage from "../pages/Settings/TrashPage";
+import DailyIncome from "../pages/Main/income/DailyIncome";
+import WeeklyIncome from "../pages/Main/income/WeeklyIncome";
+import MonthlyIncome from "../pages/Main/income/MonthlyIncome";
 
 export const dashboardItems = [
   {
@@ -77,7 +80,7 @@ export const dashboardItems = [
       },
       {
         name: "Salon Information",
-        path: "salons/salon-information",
+        path: "salon/salon-information",
         // icon: PiHandWithdrawBold,
         icon: GoDotFill,
         element: <SalonInformationPage />,
@@ -101,29 +104,29 @@ export const dashboardItems = [
         path: "income/dalily",
         // icon: LuWallet,
         icon: GoDotFill,
-        element: <StudioPost />,
+        element: <DailyIncome />,
       },
       {
         name: "Weekly",
         path: "income/weekly",
         // icon: PiHandWithdrawBold,
         icon: GoDotFill,
-        element: <TrainerPost />,
+        element: <WeeklyIncome />,
       },
       {
         name: "Monthly",
         path: "income/monthly",
         // icon: LuWallet,
         icon: GoDotFill,
-        element: <StudioPost />,
+        element: <MonthlyIncome />,
       },
-      {
-        name: "Wallet",
-        path: "income/wallet",
-        // icon: LuWallet,
-        icon: GoDotFill,
-        element: <StudioPost />,
-      },
+      // {
+      //   name: "Wallet",
+      //   path: "income/wallet",
+      //   // icon: LuWallet,
+      //   icon: GoDotFill,
+      //   element: <StudioPost />,
+      // },
     ],
   },
   {
@@ -252,11 +255,11 @@ export const dashboardItems = [
         // icon: FaServicestack,
         icon: GoDotFill,
         path: "settings/terms-conditions",
-        element: <TermsConditions />,
+        element: <TermsOfServices />,
       },
       {
         path: "settings/terms-conditions/edit",
-        element: <EditTermsConditions />,
+        element: <EditTermsOfServices />,
       },
 
       {

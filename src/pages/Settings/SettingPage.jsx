@@ -7,7 +7,7 @@ import PageHeading from "../../Components/PageHeading";
 
 const SettingPage = () => {
   const onChange = (checked) => {
-    console.log(`switch to ${checked}`);
+    // console.log(`switch to ${checked}`);
   };
   return (
     <div className="rounded-3xl py-4 border border-secondry bg-white p-6 shadow-lg mt-8 ">

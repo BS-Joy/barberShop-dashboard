@@ -3,6 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { useState } from "react";
 import DashboardModal from "../../../Components/DashboardModal";
 import SalonRequestModal from "../Salon/request/SalonRequestModal";
+import { NavLink } from "react-router-dom";
 
 const salonData = [
   {
@@ -96,7 +97,12 @@ export default function DashboardSaloonRequests() {
       {/* card header */}
       <div className="border-b border-b-primary mb-4 flex justify-between pb-4 ">
         <h3 className="text-primary text-[18px]">Saloon Request</h3>
-        <h3 className="text-[#191919] text-[18px] font-semibold">See All</h3>
+        <NavLink
+          to="salon/salon-request"
+          className="text-[#191919] text-[18px] font-semibold hover:underline"
+        >
+          See All
+        </NavLink>
       </div>
 
       <div className="max-h-[380px] overflow-y-auto salon-request-body">

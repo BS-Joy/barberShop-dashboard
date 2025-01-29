@@ -5,7 +5,7 @@ import PageHeading from "../../Components/PageHeading";
 import "react-quill/dist/quill.snow.css";
 import { useState } from "react";
 
-const EditAboutUs = () => {
+const EditTermsOfServices = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { privacyPolicy } = location.state;
@@ -18,7 +18,7 @@ const EditAboutUs = () => {
       <div className="space-y-6">
         <PageHeading
           backPath={-1}
-          title={"Edit About Us"}
+          title={"Edit Terms of Services"}
           disbaledBackBtn={false}
           className="pb-6 border-b border-b-secondry w-full"
         />
@@ -55,4 +55,4 @@ const EditAboutUs = () => {
   );
 };
 
-export default EditAboutUs;
+export default EditTermsOfServices;

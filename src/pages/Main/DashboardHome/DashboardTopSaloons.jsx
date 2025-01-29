@@ -1,6 +1,7 @@
 import { HiOutlineClipboardCheck } from "react-icons/hi";
 import { CiLocationOn } from "react-icons/ci";
 import { TiStarFullOutline } from "react-icons/ti";
+import { NavLink } from "react-router-dom";
 
 export const TopSaloons = [
   {
@@ -91,7 +92,12 @@ export default function DashboardTopSaloons() {
       {/* card header */}
       <div className="border-b border-b-primary mb-4 flex justify-between pb-4 ">
         <h3 className="text-primary text-[18px]">Top Saloons</h3>
-        <h3 className="text-[#191919] text-[18px] font-semibold">See All</h3>
+        <NavLink
+          to="salon/salon-information"
+          className="text-[#191919] text-[18px] font-semibold hover:underline"
+        >
+          See All
+        </NavLink>
       </div>
 
       <div className="max-h-[400px] h-full overflow-y-auto salon-request-body">
