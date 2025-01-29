@@ -45,6 +45,10 @@ import AddCategoryPage from "../pages/Main/category/AddCategoryPage";
 import EditCategoryPage from "../pages/Main/category/EditCategoryPage";
 import ChangePasswordPage from "../pages/Settings/ChangePasswordPage";
 import SettingPage from "../pages/Settings/SettingPage";
+import VerifyEmail from "../pages/Settings/VerifyEmail";
+import UpdatePassword from "../pages/Settings/UpdatePassword";
+import LogInActivity from "../pages/Settings/LogInActivity";
+import TrashPage from "../pages/Settings/TrashPage";
 
 export const dashboardItems = [
   {
@@ -205,15 +209,32 @@ export const dashboardItems = [
         element: <ChangePasswordPage />,
       },
       {
-        name: "Terms & Services",
+        name: "Verify Email",
         // icon: FaServicestack,
-        icon: GoDotFill,
-        path: "settings/terms-conditions",
-        element: <TermsConditions />,
+        // icon: GoDotFill,
+        path: "settings/verify-email",
+        element: <VerifyEmail />,
       },
       {
-        path: "settings/terms-conditions/edit",
-        element: <EditTermsConditions />,
+        name: "Update Password",
+        // icon: FaServicestack,
+        // icon: GoDotFill,
+        path: "settings/update-password",
+        element: <UpdatePassword />,
+      },
+      {
+        name: "Login Activity",
+        // icon: FaServicestack,
+        icon: GoDotFill,
+        path: "settings/login-activity",
+        element: <LogInActivity />,
+      },
+      {
+        name: "Trash",
+        // icon: FaServicestack,
+        icon: GoDotFill,
+        path: "settings/trash",
+        element: <TrashPage />,
       },
       {
         name: "Privacy Policy",
@@ -226,6 +247,18 @@ export const dashboardItems = [
         path: "settings/privacy-policy/edit",
         element: <EditPrivacyPolicy />,
       },
+      {
+        name: "Terms & Services",
+        // icon: FaServicestack,
+        icon: GoDotFill,
+        path: "settings/terms-conditions",
+        element: <TermsConditions />,
+      },
+      {
+        path: "settings/terms-conditions/edit",
+        element: <EditTermsConditions />,
+      },
+
       {
         name: "About Us",
         // icon: BiMessageSquareDetail,

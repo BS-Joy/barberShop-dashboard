@@ -11,7 +11,7 @@ import InputFieldIconWrapper from "../../Components/InputFieldIconWrapper";
 // import Swal from "sweetalert2";
 // import { setUser } from "../../redux/features/Auth/authSlice";
 
-const ChangePasswordPage = () => {
+const UpdatePassword = () => {
   const navigate = useNavigate();
   // const dispatch = useDispatch();
   // const { token } = useSelector((state) => state.auth);
@@ -63,7 +63,7 @@ const ChangePasswordPage = () => {
       <div className="flex flex-col items-center lg:items-start">
         <PageHeading
           backPath={-1}
-          title={"Change password"}
+          title={"Update password"}
           disbaledBackBtn={false}
           className="pb-6 border-b border-b-secondry w-full"
         />
@@ -77,23 +77,6 @@ const ChangePasswordPage = () => {
         requiredMark={false}
         onFinish={onFinish}
       >
-        {/* current password */}
-        <Form.Item
-          name="currentPassword"
-          rules={[
-            {
-              required: true,
-              message: "Please input current password!",
-            },
-          ]}
-        >
-          <Input.Password
-            size="large"
-            placeholder="Enter your current password"
-            prefix={<MdLockOutline size="16px" className="mr-2" />}
-          />
-        </Form.Item>
-
         {/* new password */}
         <Form.Item
           name="newPassword"
@@ -133,17 +116,10 @@ const ChangePasswordPage = () => {
         >
           <Input.Password
             size="large"
-            placeholder="Confirm your new password"
+            placeholder="Re-Enter your new password"
             prefix={<MdLockOutline size="16px" className="mr-2" />}
           />
         </Form.Item>
-
-        <button
-          onClick={() => navigate("/settings/verify-email")}
-          className="text-lg font-medium"
-        >
-          Forgot Password?
-        </button>
         <div className="w-[95%] flex justify-center pt-4 absolute bottom-6">
           <Button
             // disabled={isLoading}
@@ -152,7 +128,7 @@ const ChangePasswordPage = () => {
             htmlType="submit"
             className="w-full px-2 "
           >
-            Confirm Password
+            Confirm
           </Button>
         </div>
       </Form>
@@ -160,4 +136,4 @@ const ChangePasswordPage = () => {
   );
 };
 
-export default ChangePasswordPage;
+export default UpdatePassword;

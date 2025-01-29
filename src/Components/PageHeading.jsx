@@ -12,7 +12,7 @@ const PageHeading = ({ title, backPath, disbaledBackBtn, className }) => {
           className="outline-none pr-2"
           onClick={() => navigate(backPath || "/settings")}
         >
-          <FaChevronLeft size={22} />
+          <FaChevronLeft size={22} color="#3D1027" />
         </button>
       )}
       {!!title && <h1 className="text-[25px] font-medium">{title}</h1>}
