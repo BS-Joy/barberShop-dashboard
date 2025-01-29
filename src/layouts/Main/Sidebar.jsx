@@ -7,10 +7,12 @@ import Swal from "sweetalert2";
 import { TbLogout } from "react-icons/tb";
 import { FaChevronRight } from "react-icons/fa6";
 import { cn } from "../../lib/utils";
+
 const Sidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [openNome, setOpenNome] = useState({});
+  const [isActivePath, setIsActivePath] = useState(false);
 
   const handleLogOut = () => {
     Swal.fire({
@@ -31,8 +33,21 @@ const Sidebar = () => {
     });
   };
 
+  // console.log(location.pathname);
+
   useEffect(() => {
-    // console.log(location.pathname.includes("earnings"));
+    const currentPath = location.pathname;
+    routeLinkGenerators(dashboardItems).forEach((item) => {
+      if (item.rootPath && currentPath.includes(item.rootPath)) {
+        setOpenNome({ name: item.name });
+      } else if (item.children) {
+        item.children.forEach((child) => {
+          if (currentPath.includes(child.subPath)) {
+            setOpenNome({ name: item.name });
+          }
+        });
+      }
+    });
   }, [location.pathname]);
 
   return (
@@ -47,6 +62,7 @@ const Sidebar = () => {
               ({ name, icon, path, children, rootPath }, indx) =>
                 children?.length && rootPath !== "settings" ? (
                   <li key={indx} className="overflow-hidden">
+                    {/* {console.log(children[0].subPath)} */}
                     <button
                       onClick={() => {
                         setOpenNome((c) => ({

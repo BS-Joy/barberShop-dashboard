@@ -1,5 +1,4 @@
 export default function UserDetailsModal({ data }) {
-  console.log(data);
   return (
     <div className="max-w-md mx-auto rounded-lg overflow-hidden">
       <div className="flex gap-6 items-center border-b border-b-[#999999] pb-2">

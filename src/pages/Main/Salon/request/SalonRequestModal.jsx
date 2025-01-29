@@ -1,7 +1,6 @@
 import pdfIcon from "../../../../assets/images/pdf-icon.png";
 
 export default function SalonRequestModal({ data }) {
-  console.log(data);
   return (
     <div className="max-w-md mx-auto rounded-lg overflow-hidden">
       <div className="flex gap-6 items-center border-b border-b-[#999999] pb-2">
