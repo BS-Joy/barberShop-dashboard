@@ -9,7 +9,7 @@ export const routeLinkGenerators = (items) => {
         icon: item.icon,
       });
     }
-    if (item.children) {
+    if (item.children && item.name) {
       acc.push({
         name: item.name,
         icon: item.icon,

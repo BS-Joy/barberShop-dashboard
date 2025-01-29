@@ -72,7 +72,6 @@ const SignIn = () => {
           className="text-start"
         >
           <Form.Item
-            // label={<span className="font-medium text-base">Email</span>}
             name="email"
             rules={[
               {
@@ -85,13 +84,13 @@ const SignIn = () => {
               },
             ]}
           >
-            <Input size="large" placeholder="Enter your full name" />
-            <InputFieldIconWrapper>
-              <FaRegUser />
-            </InputFieldIconWrapper>
+            <Input
+              size="large"
+              placeholder="Enter your full name"
+              prefix={<FaRegUser className="mr-2" />}
+            />
           </Form.Item>
           <Form.Item
-            // label={<span className="font-medium text-base">Password</span>}
             className=""
             name="password"
             rules={[
@@ -101,10 +100,11 @@ const SignIn = () => {
               },
             ]}
           >
-            <Input.Password size="large" placeholder="Enter your password" />
-            <InputFieldIconWrapper>
-              <MdLockOutline size="16px" />
-            </InputFieldIconWrapper>
+            <Input.Password
+              size="large"
+              placeholder="Enter your password"
+              prefix={<MdLockOutline size="16px" className="mr-2" />}
+            />
           </Form.Item>
           <div className="flex justify-between items-center">
             {/* <Form.Item name="remember" valuePropName="checked">

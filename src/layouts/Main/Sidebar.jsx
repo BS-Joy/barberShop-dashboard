@@ -45,7 +45,7 @@ const Sidebar = () => {
           <ul className="mt-10 max-h-[650px] overflow-y-auto space-y-1 xl:space-y-2 px-4">
             {routeLinkGenerators(dashboardItems).map(
               ({ name, icon, path, children, rootPath }, indx) =>
-                children?.length ? (
+                children?.length && rootPath !== "settings" ? (
                   <li key={indx} className="overflow-hidden">
                     <button
                       onClick={() => {
@@ -110,28 +110,30 @@ const Sidebar = () => {
                     </div>
                   </li>
                 ) : (
-                  <li
-                    onClick={() => {
-                      setOpenNome((c) => ({
-                        name: c?.name === name ? null : name,
-                      }));
-                    }}
-                    key={indx}
-                  >
-                    <NavLink
-                      to={path}
-                      className={({ isActive }) =>
-                        `w-full px-4 py-3 flex items-center justify-start gap-3 text-lg transition-all rounded-lg ${
-                          isActive
-                            ? "bg-white text-primary"
-                            : "hover:text-primary hover:bg-white text-[20px] text-white"
-                        }`
-                      }
+                  rootPath !== "settings" && (
+                    <li
+                      onClick={() => {
+                        setOpenNome((c) => ({
+                          name: c?.name === name ? null : name,
+                        }));
+                      }}
+                      key={indx}
                     >
-                      <div>{createElement(icon, { size: "20" })}</div>
-                      <span> {name}</span>
-                    </NavLink>
-                  </li>
+                      <NavLink
+                        to={path}
+                        className={({ isActive }) =>
+                          `w-full px-4 py-3 flex items-center justify-start gap-3 text-lg transition-all rounded-lg ${
+                            isActive
+                              ? "bg-white text-primary"
+                              : "hover:text-primary hover:bg-white text-[20px] text-white"
+                          }`
+                        }
+                      >
+                        <div>{createElement(icon, { size: "20" })}</div>
+                        <span>{name}</span>
+                      </NavLink>
+                    </li>
+                  )
                 )
             )}
           </ul>

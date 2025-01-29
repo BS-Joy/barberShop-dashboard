@@ -64,6 +64,7 @@ const BannerPage = () => {
       ),
     },
   ];
+
   const bannerImage =
     "https://img.freepik.com/free-psd/banner-hair-salon_23-2148584951.jpg?t=st=1738059164~exp=1738062764~hmac=c9c542d3fdf6fe467cc84a073194d91bc3b6f4ea44b0da747779d38d11493d4b&w=1380";
 

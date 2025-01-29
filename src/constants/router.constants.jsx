@@ -43,6 +43,8 @@ import AddBannerPage from "../pages/Main/banner/AddBannerPage";
 import CategoryPage from "../pages/Main/category/CategoryPage";
 import AddCategoryPage from "../pages/Main/category/AddCategoryPage";
 import EditCategoryPage from "../pages/Main/category/EditCategoryPage";
+import ChangePasswordPage from "../pages/Settings/ChangePasswordPage";
+import SettingPage from "../pages/Settings/SettingPage";
 
 export const dashboardItems = [
   {
@@ -185,12 +187,22 @@ export const dashboardItems = [
   },
   {
     name: "Settings",
+    path: "settings",
+    icon: HiOutlineCog,
+    element: <SettingPage />,
+  },
+
+  {
+    name: "Settings",
     rootPath: "settings",
     icon: HiOutlineCog,
     children: [
       {
-        path: "settings/prifile/edit",
-        element: <EditMyProfile />,
+        name: "Change Password",
+        // icon: FaServicestack,
+        icon: GoDotFill,
+        path: "settings/change-password",
+        element: <ChangePasswordPage />,
       },
       {
         name: "Terms & Services",

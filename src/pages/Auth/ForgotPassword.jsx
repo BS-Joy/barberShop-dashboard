@@ -73,10 +73,11 @@ const ForgotPassword = () => {
               },
             ]}
           >
-            <Input size="large" placeholder="Enter your email" />
-            <InputFieldIconWrapper>
-              <CiMail size={"16px"} />
-            </InputFieldIconWrapper>
+            <Input
+              size="large"
+              placeholder="Enter your email"
+              prefix={<CiMail size={"16px"} className="mr-2" />}
+            />
           </Form.Item>
           <div className="w-full flex justify-center pt-5">
             <Button

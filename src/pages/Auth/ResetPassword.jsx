@@ -68,9 +68,6 @@ const ResetPassword = () => {
             title={"Set new password"}
             disbaledBackBtn={false}
           />
-          {/* <p className=" drop-shadow text-[#464343] mt-5">
-            Your password must be 8-10 character long.
-          </p> */}
         </div>
         <Form
           name="normal_login"
@@ -82,7 +79,6 @@ const ResetPassword = () => {
           onFinish={onFinish}
         >
           <Form.Item
-            // label={<span className="font-medium text-base">New Password</span>}
             name="newPassword"
             rules={[
               {
@@ -91,17 +87,13 @@ const ResetPassword = () => {
               },
             ]}
           >
-            <Input.Password size="large" placeholder="Enter your password" />
-            <InputFieldIconWrapper>
-              <MdLockOutline size="16px" />
-            </InputFieldIconWrapper>
+            <Input.Password
+              size="large"
+              placeholder="Enter your password"
+              prefix={<MdLockOutline size="16px" className="mr-2" />}
+            />
           </Form.Item>
           <Form.Item
-            // label={
-            //   <span className="font-medium text-base">
-            //     Confirm New Password
-            //   </span>
-            // }
             name="rePassword"
             rules={[
               {
@@ -120,10 +112,11 @@ const ResetPassword = () => {
               }),
             ]}
           >
-            <Input.Password size="large" placeholder="Re-enter your password" />
-            <InputFieldIconWrapper>
-              <MdLockOutline size="16px" />
-            </InputFieldIconWrapper>
+            <Input.Password
+              size="large"
+              placeholder="Re-enter your password"
+              prefix={<MdLockOutline size="16px" className="mr-2" />}
+            />
           </Form.Item>
           <div className="w-full flex justify-center pt-4 ">
             <Button

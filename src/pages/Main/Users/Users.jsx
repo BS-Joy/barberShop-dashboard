@@ -41,11 +41,11 @@ const Users = () => {
       dataIndex: "Phone",
     },
     {
-      title: "Action",
+      title: <div className="flex justify-center">Action</div>,
       key: "Review",
       aligen: "center",
       render: (_, data) => (
-        <div className="">
+        <div className="flex justify-center">
           {/* Review Icon */}
           <button className="mr-3">
             <IoChatbubbleEllipsesOutline size={"18px"} color="#3D1027" />

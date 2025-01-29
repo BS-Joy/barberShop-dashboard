@@ -12,6 +12,7 @@ const bannerImage =
 
 export default function EditCategoryPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const showModal = (data) => {
     setIsModalOpen(true);
   };
@@ -20,6 +21,7 @@ export default function EditCategoryPage() {
   const handleClick = () => {
     inputRef.current.click();
   };
+
   return (
     <div className="mx-auto h-[750px] overflow-hidden p-6 bg-white rounded-2xl shadow-lg border border-primary relative">
       <PageHeading
@@ -91,7 +93,7 @@ export default function EditCategoryPage() {
         isModalOpen={isModalOpen}
         closeIcon={false}
       >
-        <CategoryDeleteModal />
+        <CategoryDeleteModal showModal={setIsModalOpen} />
       </DashboardModal>
     </div>
   );
