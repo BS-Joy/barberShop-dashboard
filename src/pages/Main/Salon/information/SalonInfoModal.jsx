@@ -30,10 +30,10 @@ export default function SalonInfoModal({ data }) {
         <h4 className="text-2xl mb-2 font-semibold text-[#191919]">
           Infromation
         </h4>
-        <p className="text-[#191919]">Name: {host?.name}</p>
+        <p className="text-[#191919]">Name: {data?.name}</p>
         <p className="text-[#191919]">Email: {host?.email}</p>
-        <p className="text-[#191919]">Contact: {host?.phone}</p>
-        <p className="text-[#191919]">Address: {host?.address}</p>
+        <p className="text-[#191919]">Contact: {data?.phone}</p>
+        <p className="text-[#191919]">Address: {data?.address}</p>
       </div>
       <div className="mt-4 flex gap-6">
         <button className="rounded-full border border-primary text-white bg-primary hover:bg-[#4d2525] px-8 py-2">

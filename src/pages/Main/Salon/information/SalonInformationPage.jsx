@@ -104,7 +104,7 @@ export default function SalonInformationPage() {
     isSuccess,
     isError,
     error,
-  } = useGetAllSalonQuery();
+  } = useGetAllSalonQuery("active");
 
   let pageContent;
   const salons = salonLists?.data?.data || [];
@@ -115,7 +115,7 @@ export default function SalonInformationPage() {
 
   if (isLoading) {
     pageContent = (
-      <div className="flex justify-center h-[70vh] items-center w-[80vw]">
+      <div className="flex justify-center h-[70vh] items-center w-[50vw]">
         <LoadingSpinner />
       </div>
     );
@@ -135,7 +135,7 @@ export default function SalonInformationPage() {
           )}
         </div>
       ) : (
-        <EmptyPage />
+        <EmptyPage emptyText={"No salon available to show"} />
       );
   }
 

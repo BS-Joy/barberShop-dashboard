@@ -104,7 +104,7 @@ export default function SalonRequestPage() {
     isSuccess,
     isError,
     error,
-  } = useGetAllSalonQuery();
+  } = useGetAllSalonQuery("pending");
 
   let pageContent;
   const salons = salonLists?.data?.data || [];
@@ -115,7 +115,7 @@ export default function SalonRequestPage() {
 
   if (isLoading) {
     pageContent = (
-      <div className="flex justify-center h-[70vh] items-center w-[80vw]">
+      <div className="flex justify-center h-[70vh] items-center w-[50vw]">
         <LoadingSpinner />
       </div>
     );
@@ -123,19 +123,12 @@ export default function SalonRequestPage() {
     pageContent =
       salons.length > 0 ? (
         <div className="grid grid-cols-4 gap-6">
-          {salons.map(
-            (salon, index) =>
-              salon?.status !== "active" && (
-                <SalonSummaryCard
-                  data={salon}
-                  showModal={showModal}
-                  key={index}
-                />
-              )
-          )}
+          {salons.map((salon, index) => (
+            <SalonSummaryCard data={salon} showModal={showModal} key={index} />
+          ))}
         </div>
       ) : (
-        <EmptyPage />
+        <EmptyPage emptyText={"No salon request yet"} />
       );
   }
 

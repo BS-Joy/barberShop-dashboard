@@ -7,11 +7,16 @@ const aToken =
 export const extendedSalonApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getAllSalon: builder.query({
-      query: () => {
+      query: (query) => {
         const cookies = new Cookies();
         const token = cookies.get("token");
+
+        let url = "/salon/all";
+        if (query) {
+          url += `?status=${query}`;
+        }
         return {
-          url: "/salon/all",
+          url,
           headers: {
             Authorization: `Bearer ${token}`,
           },
