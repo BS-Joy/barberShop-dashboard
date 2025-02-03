@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import { Button, DatePicker, Input, Pagination, Select, Table } from "antd";
-import { FiAlertCircle } from "react-icons/fi";
-import DashboardModal from "../../../Components/DashboardModal";
-import { IoSearch } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
-import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import { FiEye } from "react-icons/fi";
-import PageHeading from "../../../Components/PageHeading";
+import { Button, Pagination, Table } from "antd";
+import { useNavigate } from "react-router-dom";
 import { LuTrash2 } from "react-icons/lu";
 import SelectAppMenu from "./SelectAppMenu";
 // import UserDetailsModal from "./UserDetailsModal";
