@@ -5,7 +5,7 @@ const defaultImage =
   "https://cdn.pixabay.com/photo/2019/10/10/18/51/smartphone-4540273_1280.jpg";
 
 export default function SalonRequestModal({ data }) {
-  const hostImage = getImageUrl(data?.host?.image);
+  const hostImage = getImageUrl(data?.image, defaultImage);
   return (
     <div className="max-w-md mx-auto rounded-lg overflow-hidden">
       <div className="flex gap-6 items-center border-b border-b-[#999999] pb-2">
