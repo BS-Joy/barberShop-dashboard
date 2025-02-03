@@ -1,17 +1,22 @@
-import { Button, Input } from "antd";
+import { Button, Input, Spin } from "antd";
 import Form from "antd/es/form/Form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa6";
 import { MdLockOutline } from "react-icons/md";
 import InputFieldIconWrapper from "../../Components/InputFieldIconWrapper";
 import AuthLayoutWrapper from "./AuthLayoutWrapper";
+import { useLoginMutation } from "../../features/user/userSlice";
+import toast from "react-hot-toast";
+import LoadingSpinner from "../../Components/LoadingSpinner";
 
 const SignIn = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const [loginUser, { isLoading }] = useLoginMutation();
+
   const onFinish = async (values) => {
-    navigate(location.state ? location.state : "/");
+    // navigate(location.state ? location.state : "/");
     // try {
     //   const response = await setData(values);
     //   // console.log(response);
@@ -50,6 +55,19 @@ const SignIn = () => {
     //     text: "Something went wrong. Please try again later.",
     //   });
     // }
+
+    try {
+      const res = await loginUser(values).unwrap();
+      console.log(res);
+
+      if (res.success) {
+        toast.success("Log In Successfull");
+        navigate("/");
+      }
+    } catch (err) {
+      console.log(err);
+      toast.error(err.data.message);
+    }
   };
 
   return (
@@ -129,7 +147,14 @@ const SignIn = () => {
               htmlType="submit"
               className="px-2 w-full bg-primary"
             >
-              Sign In
+              {isLoading ? (
+                <div className="flex gap-2 items-center">
+                  <span>Signing in</span>
+                  <LoadingSpinner size={5} color="stroke-white" />
+                </div>
+              ) : (
+                "Sign In"
+              )}
             </Button>
           </div>
         </Form>

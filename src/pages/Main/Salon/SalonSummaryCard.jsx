@@ -4,28 +4,31 @@ import {
   HiOutlinePhone,
   HiOutlineLocationMarker,
 } from "react-icons/hi";
-import cardImage from "../../../assets/images/salon-card-image.png";
+import defaultCardImage from "../../../assets/images/salon-card-image.png";
+import { getImageUrl } from "../../../utils/getImageUrl";
 
 export default function SalonSummaryCard({ data, showModal }) {
+  const thumbnailImage = getImageUrl(data?.image, defaultCardImage);
   return (
     <div className=" bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
       <div className="p-4">
         <img
           className="w-full h-48 object-center rounded-lg"
-          src={cardImage}
+          src={thumbnailImage || defaultCardImage}
+          onError={(e) => (e.target.src = defaultCardImage)}
           alt="Salon"
         />
       </div>
       <div className="p-4">
         <div className="flex items-center text-lg font-semibold text-gray-800 mb-2 leading-5">
-          <HiOutlineLibrary className="text-primary mr-2" /> NYC Salon
+          <HiOutlineLibrary className="text-primary mr-2" /> {data?.name}
         </div>
         <div className="flex items-center text-gray-600 mb-1">
-          <HiOutlinePhone className="text-primary mr-2" /> +1 35353 35354
+          <HiOutlinePhone className="text-primary mr-2" /> {data?.phone}
         </div>
         <div className="flex items-center text-gray-600 mb-4">
-          <HiOutlineLocationMarker className="text-primary mr-2" /> 12abc
-          street, California, USA
+          <HiOutlineLocationMarker className="text-primary mr-2" />{" "}
+          {data?.address}
         </div>
       </div>
 

@@ -69,7 +69,7 @@ const BannerPage = () => {
     "https://img.freepik.com/free-psd/banner-hair-salon_23-2148584951.jpg?t=st=1738059164~exp=1738062764~hmac=c9c542d3fdf6fe467cc84a073194d91bc3b6f4ea44b0da747779d38d11493d4b&w=1380";
 
   const data = [];
-  for (let index = 0; index < 6; index++) {
+  for (let index = 0; index < 20; index++) {
     data.push({
       transIs: `${index + 1}`,
       bannerPhoto: bannerImage,
